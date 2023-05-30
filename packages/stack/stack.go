@@ -12,17 +12,15 @@ func (stack *Stack[T]) Push(key T) {
 	stack.keys = append(stack.keys, key)
 }
 
-func (stack *Stack[T]) Top() (T, bool) {
-	var x T
+func (stack *Stack[T]) Peek() (x T, empty bool) {
 	if len(stack.keys) > 0 {
 		x = stack.keys[len(stack.keys)-1]
 		return x, false
 	}
-	return x, true
+	return x, false
 }
 
-func (stack *Stack[T]) Pop() (T, bool) {
-	var x T
+func (stack *Stack[T]) Pop() (x T, empty bool) {
 	if len(stack.keys) > 0 {
 		x = stack.keys[len(stack.keys)-1]
 		stack.keys = stack.keys[:len(stack.keys)-1]
