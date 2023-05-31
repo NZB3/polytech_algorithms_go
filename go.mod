@@ -1,3 +1,3 @@
-module algorithms
+module alg
 
 go 1.20

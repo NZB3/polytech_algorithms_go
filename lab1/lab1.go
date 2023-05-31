@@ -1,25 +1,13 @@
 package main
 
 import (
-	initarr "algorithms/packages/arrays/init_arr"
-	"algorithms/packages/arrays/search"
-	"algorithms/packages/measure"
+	initarr "alg/pkgs/arrays/init_arr"
+	"alg/pkgs/arrays/search"
+	"alg/pkgs/arrays/useless"
+	"alg/pkgs/measure"
 	"fmt"
 	"log"
 )
-
-func insertAt(a []int, index int, value int) []int {
-	if len(a) == index {
-		return append(a, value)
-	}
-	a = append(a[:index+1], a[index:]...)
-	a[index] = value
-	return a
-}
-
-func removeAt(a []int, index int) []int {
-	return append(a[:index], a[index+1:]...)
-}
 
 func main() {
 	var err error
@@ -53,25 +41,49 @@ func main() {
 	fmt.Println(new_ord)
 
 	measure.Measure(func() {
-		new_ord = insertAt(new_ord, 5, 111)
+		new_ord = useless.InsertAt(new_ord, 5, 111)
 		fmt.Print("ord ")
 		fmt.Print(new_ord)
 	})
 
 	measure.Measure(func() {
-		new_rand = insertAt(new_rand, 5, 111)
+		new_rand = useless.InsertAt(new_rand, 5, 111)
 		fmt.Print("rand ")
 		fmt.Print(new_rand)
 	})
 
 	measure.Measure(func() {
-		new_ord = removeAt(new_ord, 5)
+		new_ord = useless.RemoveAt(new_ord, 5)
 		fmt.Print("ord ")
 		fmt.Print(new_ord)
 	})
 
 	measure.Measure(func() {
-		new_rand = removeAt(new_rand, 5)
+		new_rand = useless.RemoveAt(new_rand, 5)
+		fmt.Print("rand ")
+		fmt.Print(new_rand)
+	})
+
+	measure.Measure(func() {
+		new_ord = useless.Append(new_ord, 111)
+		fmt.Print("ord ")
+		fmt.Print(new_ord)
+	})
+
+	measure.Measure(func() {
+		new_rand = useless.Append(new_rand, 111)
+		fmt.Print("rand ")
+		fmt.Print(new_rand)
+	})
+
+	measure.Measure(func() {
+		new_ord = useless.Prepend(new_ord, 111)
+		fmt.Print("ord ")
+		fmt.Print(new_ord)
+	})
+
+	measure.Measure(func() {
+		new_rand = useless.Prepend(new_rand, 111)
 		fmt.Print("rand ")
 		fmt.Print(new_rand)
 	})

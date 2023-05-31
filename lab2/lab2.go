@@ -1,9 +1,9 @@
 package main
 
 import (
-	initarr "algorithms/packages/arrays/init_arr"
-	"algorithms/packages/arrays/sorts"
-	"algorithms/packages/measure"
+	initarr "alg/pkgs/arrays/init_arr"
+	"alg/pkgs/arrays/sorts"
+	"alg/pkgs/measure"
 	"fmt"
 	"log"
 )

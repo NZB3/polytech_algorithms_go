@@ -1,8 +1,8 @@
 package main
 
 import (
-	"algorithms/packages/measure"
-	"algorithms/packages/stack"
+	"alg/pkgs/measure"
+	"alg/pkgs/stack"
 	"bufio"
 	"fmt"
 	"math"
